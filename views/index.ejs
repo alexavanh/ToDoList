@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
     <title>Home Page</title>
 </head>
 <body>
@@ -13,22 +14,22 @@
         <input type="text" id="dTask" name="dTask">
         <label for="wTask">Work Tasks:</label>
         <input type="text" id="wTask" name="wTask">
-        <input type="submit" value="OK">
+        <input type="submit" value="Add!">
     </form>
     <% if (locals.dArr) { %>
         <h2>Day's Tasks</h2>
         <%for (var i = 0; i < locals.dArr.length; i++) {%>
-            <li>
-                <%= dArr[i] %>
-            </li>
+            <input type="checkbox" class="strikethrough" name="dOff">
+            <label for="dOff" class="strikeThis" ><%= dArr[i] %></label>
+            <br>
         <% }
     }
     if (locals.wArr) { %>
         <h2>Work Tasks</h2>
         <%for (var i = 0; i < locals.wArr.length; i++) {%>
-            <li>
-                <%= wArr[i] %>
-            </li>
+            <input type="checkbox" class="strikethrough" name="wOff">
+            <label for="wOff" class="strikeThis"><%= wArr[i] %></label>
+            <br>
         <% }
     } %>
 </body>
