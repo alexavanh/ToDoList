@@ -8,11 +8,28 @@
 <body>
     <h1>To Do List!</h1>
     <h2>Add your tasks!</h2>
-    <form action="/" method="post">
+    <form action="/submit" method="post">
         <label for="dTask">Day's Tasks:</label>
         <input type="text" id="dTask" name="dTask">
         <label for="wTask">Work Tasks:</label>
         <input type="text" id="wTask" name="wTask">
+        <input type="submit" value="OK">
     </form>
+    <% if (locals.dArr) { %>
+        <h2>Day's Tasks</h2>
+        <%for (var i = 0; i < locals.dArr.length; i++) {%>
+            <li>
+                <%= dArr[i] %>
+            </li>
+        <% }
+    }
+    if (locals.wArr) { %>
+        <h2>Work Tasks</h2>
+        <%for (var i = 0; i < locals.wArr.length; i++) {%>
+            <li>
+                <%= wArr[i] %>
+            </li>
+        <% }
+    } %>
 </body>
 </html>
