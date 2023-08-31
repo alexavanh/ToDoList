@@ -1,3 +1,15 @@
 .strikethrough:checked + .strikeThis {
     text-decoration: line-through;
 }
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -200px;
+}
+
+.vert-align {
+    vertical-align: middle;
+}

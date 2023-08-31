@@ -8,14 +8,14 @@
 </head>
 <body>
     <%- include('partials/header.ejs') %>
-    <h1>To Do List for Today!</h1>
-    <h2>Add your tasks!</h2>
-    <form action="/today" method="post">
+    <h1 class="text-center">To Do List for Today!</h1>
+    <h2 class="text-center">Add your tasks!</h2>
+    <form action="/today" method="post" class="text-center">
         <label for="dTask">Today's Tasks:</label>
         <input type="text" id="dTask" name="dTask">
         <input type="submit" value="Add!">
     </form>
-    <h2>Today's Tasks</h2>
+    <h2 class="text-center">Today's Tasks</h2>
     <% if (locals.dArr) { 
         for (var i = 0; i < locals.dArr.length; i++) {%>
             <input type="checkbox" class="strikethrough" name="wOff">
