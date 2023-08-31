@@ -7,30 +7,7 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>To Do List!</h1>
-    <h2>Add your tasks!</h2>
-    <form action="/submit" method="post">
-        <label for="dTask">Day's Tasks:</label>
-        <input type="text" id="dTask" name="dTask">
-        <label for="wTask">Work Tasks:</label>
-        <input type="text" id="wTask" name="wTask">
-        <input type="submit" value="Add!">
-    </form>
-    <% if (locals.dArr) { %>
-        <h2>Day's Tasks</h2>
-        <%for (var i = 0; i < locals.dArr.length; i++) {%>
-            <input type="checkbox" class="strikethrough" name="dOff">
-            <label for="dOff" class="strikeThis" ><%= dArr[i] %></label>
-            <br>
-        <% }
-    }
-    if (locals.wArr) { %>
-        <h2>Work Tasks</h2>
-        <%for (var i = 0; i < locals.wArr.length; i++) {%>
-            <input type="checkbox" class="strikethrough" name="wOff">
-            <label for="wOff" class="strikeThis"><%= wArr[i] %></label>
-            <br>
-        <% }
-    } %>
+    <%- include('partials/header.ejs') %>
+    <h1 class="text-center">To Do List!</h1>
 </body>
 </html>

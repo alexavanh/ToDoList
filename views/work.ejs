@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Work Tasks</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <h1>To Do List for Work!</h1>
+    <h2>Add your tasks!</h2>
+    <form action="/work" method="post">
+        <label for="wTask">Work Tasks:</label>
+        <input type="text" id="wTask" name="wTask">
+        <input type="submit" value="Add!">
+    </form>
+    <h2>Work Tasks</h2>
+    <% if (locals.wArr) {
+        for (var i = 0; i < locals.wArr.length; i++) {%>
+            <input type="checkbox" class="strikethrough" name="wOff">
+            <label for="wOff" class="strikeThis"><%= wArr[i] %></label>
+            <br>
+        <% }
+    } %>
+</body>
+</html>

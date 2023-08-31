@@ -14,20 +14,33 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
-app.post("/submit", (req, res) => {
+app.get("/today", (req, res) => {
+    res.render("today.ejs");
+});
+
+app.get("/work", (req, res) => {
+    res.render("work.ejs");
+});
+
+app.post("/today", (req, res) => {
     if (req.body["dTask"] != "") {
         dArr.push(req.body["dTask"]);
     }
+    res.render("today.ejs", {
+        daysTasks: req.body["dTask"],
+        dArr: dArr
+    });
+});
+
+app.post("/work", (req, res) => {
     if (req.body["wTask"] != "") {
         wArr.push(req.body["wTask"]);
     }
-    res.render("index.ejs", {
-        daysTasks: req.body["dTask"],
+    res.render("work.ejs", {
         workTasks: req.body["wTask"],
-        dArr: dArr,
         wArr: wArr
     });
-});
+})
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
