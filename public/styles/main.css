@@ -1,15 +1,27 @@
 .strikethrough:checked + .strikeThis {
-    text-decoration: line-through;
+  text-decoration: line-through;
+  width: 50px;
 }
+/* 
+ul li.checked {
+    text-decoration: line-through;
+  } */
 
 .centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -200px;
 }
 
 .vert-align {
-    vertical-align: middle;
+  vertical-align: middle;
+}
+
+.to-do-list {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
 }
